@@ -94,6 +94,7 @@
 <script>
 import axios from 'axios'
 
+
 export default {
   name: 'App',
 
@@ -121,7 +122,7 @@ export default {
     mounted() {
         
         this.intervalData = setInterval(this.getTickets, 15000)
-        //this.getTickets()
+        this.getTickets()
     },
 
      destroyed() {
@@ -132,7 +133,7 @@ export default {
     methods:{
         getTickets() {
         // const url = 'https://api.tomticket.com/chamados/42b37aec344d98888d2d58ee1a425558/1/?departament_id=4d49973cde1195ab7558f777670a1dc0&situacao=0'
-        axios("https://api.tomticket.com/chamados/42b37aec344d98888d2d58ee1a425558/1/?departament_id=4d49973cde1195ab7558f777670a1dc0&situacao=0,1,2,3").then((res) =>{
+        axios(`https://api.tomticket.com/chamados/${process.env.VUE_APP_SECRET_ACCESS_KEY}/1/?departament_id=${process.env.VUE_APP_SECRET_ACCESS_KEY_TI}&situacao=0,1,2,3`).then((res) =>{
             this.chamados = res.data.data
         })
         }
