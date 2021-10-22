@@ -1,6 +1,6 @@
 <template>
   <v-main>
-        <v-row justify="center" class="mx-3">
+    <v-row justify="center" class="mx-3">
       <v-col cols="12" md="11">
         <v-card flat>
           <router-view></router-view>
@@ -12,10 +12,8 @@
 
 <script>
 export default {
-
-}
+  name: "Content",
+};
 </script>
 
-<style>
-
-</style>
+<style></style>
